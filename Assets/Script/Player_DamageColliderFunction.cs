@@ -47,7 +47,7 @@ public class Player_DamageColliderFunction : MonoBehaviour
                 Vector3 direction = Vector3.Normalize(other.gameObject.transform.position - owner.transform.position);
                 rb.AddForce(direction * fireEventArgs.FireForce, ForceMode.Impulse);
                 GameObject tempFx = Instantiate(ref_FX, contactPoint, Quaternion.identity);
-                //tempFx.AddComponent<ParticleEffectController>();
+                tempFx.AddComponent<ParticleEffectController>();
 
                 if(other.CompareTag("Player"))
                 {
