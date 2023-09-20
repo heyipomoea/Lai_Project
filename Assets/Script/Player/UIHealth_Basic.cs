@@ -12,6 +12,7 @@ public class UIHealth_Basic : MonoBehaviour
 
     private Camera mainCamera;
     private PlayerHealth playerHealth;
+    private EnemyHealth enemyHealth;
 
     private RectTransform rectTransform;
     private CapsuleCollider capsuleCollider;
@@ -23,6 +24,7 @@ public class UIHealth_Basic : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
 
         playerHealth = GetComponentInParent<PlayerHealth>();
+        enemyHealth = GetComponentInParent<EnemyHealth>();
 
         mainCamera = Camera.main;
 
@@ -41,6 +43,7 @@ public class UIHealth_Basic : MonoBehaviour
     {
         float percent = 0;
         if (playerHealth) percent = playerHealth.CurrentHP / playerHealth.MaxHP;
+        if (enemyHealth) percent = enemyHealth.CurrentHP / enemyHealth.MaxHP;
 
         image_HP.fillAmount = Mathf.Lerp(image_HP.fillAmount, percent, lerp * Time.deltaTime);
 
