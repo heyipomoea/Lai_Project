@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,12 +7,15 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     private PlayerMovementController playerMovementController;
+    private PlayerHealth playerHealth;
     private Animator animator;
     private int velXHash, velYHash;
 
     private int jumpTriggerHash, isGroundedHash;
     private int attack1Index = 0, attack1MaxIndex = 2;
     private int attack1Hash, attack1IndexHash;
+
+    private int hitTriggerHash, deadTriggerHash, revivalTriggerHash;
 
     private EventHandler startAnimReceived, endAnimReceived;
     public event EventHandler StartAnimReceived
@@ -43,7 +46,29 @@ public class PlayerAnimationController : MonoBehaviour
         velXHash = Animator.StringToHash("VelX");
         velYHash = Animator.StringToHash("VelY");
 
-        
+        playerHealth = GetComponentInParent<PlayerHealth>();
+        playerHealth.HitReceived += OnHit;
+        playerHealth.DeadReceived += OnDead;
+        playerHealth.RevivalReceived += OnRevival;
+
+        hitTriggerHash = Animator.StringToHash("HitTrigger");
+        deadTriggerHash = Animator.StringToHash("DeadTrigger");
+        revivalTriggerHash = Animator.StringToHash("RevivalTrigger");
+    }
+
+    private void OnRevival(object sender, EventArgs e)
+    {
+        animator.SetTrigger(revivalTriggerHash);
+    }
+
+    private void OnDead(object sender, EventArgs e)
+    {
+        animator.SetTrigger(deadTriggerHash);
+    }
+
+    private void OnHit(object sender, EventArgs e)
+    {
+        animator.SetTrigger(hitTriggerHash);
     }
 
     void StartAttackAnimation()

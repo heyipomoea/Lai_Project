@@ -1,11 +1,11 @@
-using System;
+锘縰sing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    [Header("簿笆把计")]
+    [Header("绉诲嫊鍙冩暩")]
     [SerializeField] private float moveSpeed = 3f;
     public float MoveSpeed => moveSpeed;
 
@@ -22,7 +22,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float JumpForce = 5f;
     private float groundCheckDistance = 0.1f;
 
-    [Header("ю阑1把计")]
+    [Header("鏀绘搳1鍙冩暩")]
     [SerializeField] private float Fire1Interval = .1f;
     [SerializeField] private float Fire1Damage = 1.0f;
     [SerializeField] private float Fire1Force = 1.0f;
@@ -49,12 +49,28 @@ public class PlayerMovementController : MonoBehaviour
         remove { jumpReceived -= value; }
     }
 
+    private PlayerHealth playerHealth;
+
     // Start is called before the first frame update
     void Start()
     {
         capsuleCollider = GetComponent<CapsuleCollider>();
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
+
+        playerHealth = GetComponent<PlayerHealth>();
+        playerHealth.DeadReceived += OnDead;
+        playerHealth.RevivalReceived += OnRevival;
+    }
+
+    private void OnRevival(object sender, EventArgs e)
+    {
+        enabled = true;
+    }
+
+    private void OnDead(object sender, EventArgs e)
+    {
+        enabled = false;
     }
 
     // Update is called once per frame

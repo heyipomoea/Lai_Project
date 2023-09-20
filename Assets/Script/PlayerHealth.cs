@@ -40,6 +40,14 @@ public class PlayerHealth : MonoBehaviour
         hp = MaxHP;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            OnDamage(2);
+        }
+    }
+
     public void OnDamage(float damage)
     {
         hitReceived?.Invoke(this, EventArgs.Empty);
