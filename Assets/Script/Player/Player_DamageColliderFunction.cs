@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,9 +49,14 @@ public class Player_DamageColliderFunction : MonoBehaviour
                 GameObject tempFx = Instantiate(ref_FX, contactPoint, Quaternion.identity);
                 tempFx.AddComponent<ParticleEffectController>();
 
-                if(other.CompareTag("Player"))
+                if(!other.CompareTag("Player"))
                 {
-
+                    float TotalDamage = fireEventArgs.FireDamage;
+                    EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+                    if(enemyHealth)
+                    {
+                        enemyHealth.OnDamage(TotalDamage);
+                    }
                 }
             }
         }

@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 1
-  ref_FX: {fileID: 0}
+  ref_FX: {fileID: 5705874396392754154, guid: 81208af858c52e34694c7e9e626cd31e, type: 3}
   maxHP: 10
 --- !u!114 &1080386048
 MonoBehaviour:
@@ -384,7 +384,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   RotationSpeed: 5
   JumpForce: 5
-  closeAttackDistance: 2
+  closeAttackDistance: 1.5
   FireRandomInterval: {x: 1, y: 2}
   Fire1Interval: 0.1
   Fire1Damage: 1
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   JumpForce: 5
   Fire1Interval: 0.1
   Fire1Damage: 1
-  Fire1Force: 3
+  Fire1Force: 0
   forceMode: 1
 --- !u!114 &2043263009
 MonoBehaviour:
@@ -1904,7 +1904,7 @@ Animator:
   m_GameObject: {fileID: 5908667052983965778}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 942e6d5330e147fe84c5ab6ab2193ca1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1f68948a5bb74f2fa9e9087a872750e9, type: 2}
+  m_Controller: {fileID: 9100000, guid: d43168693019c434cb3fc0c7fb50eeeb, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5392,6 +5392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a575e7bb7e14a8546bbd0fd60c1906bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ref_FX: {fileID: 5705874396392754154, guid: 81208af858c52e34694c7e9e626cd31e, type: 3}
 --- !u!135 &8929060906921267291
 SphereCollider:
   m_ObjectHideFlags: 0
