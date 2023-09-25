@@ -72,5 +72,6 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(AfterDeadTime);
         GameObject tempFx = Instantiate(ref_FX, transform.position, Quaternion.identity);
         tempFx.AddComponent<ParticleEffectController>();
+        Destroy(gameObject);
     }
 }
