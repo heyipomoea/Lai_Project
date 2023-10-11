@@ -14626,6 +14626,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4777641368565422291, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289333734885387704, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6120398277515793788, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.5500488
@@ -14716,14 +14724,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7539506936604823939, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5
+      value: -4.999939
       objectReference: {fileID: 0}
     - target: {fileID: 7539506936604823939, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -39.999817
+      value: -39.999756
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935653158234945207, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8935653158234945207, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
       propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935653158234945207, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935653158234945207, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
+      propertyPath: m_MatchWidthOrHeight
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8935653158234945207, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
@@ -14734,6 +14754,10 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 9082506203113400462, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1472803562}
     - target: {fileID: 9082506203113400462, guid: 632d7dd081d26fb4d8449133af415978, type: 3}
       propertyPath: m_RenderMode
       value: 0
