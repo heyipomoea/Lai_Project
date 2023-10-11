@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    private GameManager_Basic gameManager;
     public int Score = 1;
-
     [SerializeField] private GameObject ref_FX;
     [SerializeField] private float maxHP = 10f;
     public float MaxHP => maxHP;
@@ -35,6 +35,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         hp = MaxHP;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager_Basic>();
     }
 
     private void Update()
@@ -65,6 +66,7 @@ public class EnemyHealth : MonoBehaviour
         deadReceived?.Invoke(this, EventArgs.Empty);
         enabled = false;
         StartCoroutine(AfterDead());
+        gameManager.AddScore(1);
     }
 
     IEnumerator AfterDead()
